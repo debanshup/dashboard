@@ -3,12 +3,14 @@ import { connectDB } from "@/connector/connect";
 // import { insight } from "@/app/jsonData/data";
 import Insights from "@/models/data.model";
 import { Helper } from "@/helper/Helper";
+import mongoose from "mongoose";
 
 connectDB();
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
     // console.log("constants", req.nextUrl.searchParams);
+
     const params = req.nextUrl.searchParams;
     const rawParams: Record<string, string | string[]> = {};
 

@@ -1,7 +1,7 @@
 // store/useGlobalStore.ts
 import { create } from "zustand";
 
-type Filters = {
+export type Filters = {
   topic: string | string[];
   sector: string | string[];
   region: string | string[];
@@ -11,14 +11,14 @@ type Filters = {
   end_year: string | string[];
 };
 
-type Constants = {
-  end_year: string[];
+export type Constants = {
+  end_years: string[];
   topics: string[];
-  sector: string[];
-  region: string[];
-  pestle: string[];
-  source: string[];
-  country: string[];
+  sectors: string[];
+  regions: string[];
+  pestles: string[];
+  sources: string[];
+  countries: string[];
 };
 
 type GlobalStore = {
@@ -34,13 +34,13 @@ type GlobalStore = {
 export const useGlobalStore = create<GlobalStore>((set) => ({
   data: [],
   constants: {
-    end_year: [],
+    end_years: [],
     topics: [],
-    sector: [],
-    region: [],
-    pestle: [],
-    source: [],
-    country: [],
+    sectors: [],
+    regions: [],
+    pestles: [],
+    sources: [],
+    countries: [],
   },
   filters: {
     sector: "",
